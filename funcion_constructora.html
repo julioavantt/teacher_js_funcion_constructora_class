@@ -1,0 +1,17 @@
+<script>
+ function Animal(tipo, patas, bigotes) {
+  this.tipo = tipo;
+  this.patas = patas;
+  this.bigotes = bigotes;
+
+  this.describir = function () {
+   console.log(this);
+   return `Soy un ${this.tipo}, tengo ${this.patas} patas y ${
+    this.bigotes === "si" ? "" : "no "
+   }tengo bigotes.`;
+  };
+ }
+
+ const miaui = new Animal("gato", 4, "si");
+ console.log(miaui.describir());
+</script>

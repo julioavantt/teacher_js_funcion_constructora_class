@@ -1,0 +1,19 @@
+<script>
+ class Animal {
+  constructor(tipo, patas, bigotes) {
+   this.tipo = tipo;
+   this.patas = patas;
+   this.bigotes = bigotes;
+  }
+
+  describir = function () {
+   console.log(this);
+   return `Soy un ${this.tipo}, tengo ${this.patas} patas y ${
+    this.bigotes === "si" ? "" : "no "
+   }tengo bigotes.`;
+  };
+ }
+
+ const zunchi = new Animal("bagre", 0, "no");
+ console.log(zunchi.describir());
+</script>
