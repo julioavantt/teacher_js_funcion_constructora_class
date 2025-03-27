@@ -19,6 +19,7 @@
 
     depositar(monto) {
      this.saldo += monto;
+     localStorage.setItem("saldo", this.saldo);
      this.verSaldo();
     }
     retirar(monto) {
@@ -26,6 +27,7 @@
       document.body.innerHTML = "<img src='./1.png' />";
      } else {
       this.saldo -= monto;
+      localStorage.setItem("saldo", this.saldo);
       console.log(
        `Wey con cédula ${this.cedula}, tu saldo es ${this.saldo} aflojale a las compras`
       );
@@ -33,9 +35,19 @@
     }
    }
 
-   let cedula = prompt("Ingrese cédula");
-   let inicial = prompt("Ingrese su dinero imaginario");
-   let cliente = new CuentaBancaria(cedula, Number(inicial));
+   let cliente;
+
+   if (localStorage.getItem("cedula")) {
+    cliente = new CuentaBancaria(
+     localStorage.getItem("cedula"),
+     Number(localStorage.getItem("saldo"))
+    );
+   } else {
+    let cedula = prompt("Ingrese cédula");
+    localStorage.setItem("cedula", cedula);
+    let inicial = prompt("Ingrese su dinero imaginario");
+    cliente = new CuentaBancaria(cedula, Number(inicial));
+   }
 
    let operacion = prompt(`Ingrese operación:
    
