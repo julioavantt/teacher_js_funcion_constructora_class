@@ -1,8 +1,8 @@
-# Simulador de Cuenta Bancaria
+# Ejercicio: Simulador de Cuenta Bancaria
 
 ## Descripción
 
-Este proyecto es un **simulador de cuenta bancaria** desarrollado en **JavaScript** utilizando **clases**. Permite a un usuario realizar operaciones básicas sobre su cuenta, tales como:
+**Simulador de cuenta bancaria** desarrollado en **JavaScript** utilizando una **clase**. Permite a un usuario realizar operaciones básicas sobre su cuenta, tales como:
 
 - Depositar dinero.
 - Retirar fondos.
