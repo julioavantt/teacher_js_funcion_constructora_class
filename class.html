@@ -6,12 +6,12 @@
    this.bigotes = bigotes;
   }
 
-  describir = function () {
+  describir() {
    console.log(this);
    return `Soy un ${this.tipo}, tengo ${this.patas} patas y ${
     this.bigotes === "si" ? "" : "no "
    }tengo bigotes.`;
-  };
+  }
  }
 
  const zunchi = new Animal("bagre", 0, "no");

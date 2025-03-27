@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simluador bancario</title>
+ </head>
+ <body>
+  <script>
+   class CuentaBancaria {
+    constructor(cedula, saldo = 0) {
+     this.cedula = cedula;
+     this.saldo = saldo;
+    }
+
+    verSaldo() {
+     console.log(`Wey con cédula ${this.cedula}, tu saldo es $${this.saldo}`);
+    }
+
+    depositar(monto) {
+     this.saldo += monto;
+     this.verSaldo();
+    }
+    retirar(monto) {
+     if (monto > this.saldo) {
+      document.body.innerHTML = "<img src='./1.png' />";
+     } else {
+      this.saldo -= monto;
+      console.log(
+       `Wey con cédula ${this.cedula}, tu saldo es ${this.saldo} aflojale a las compras`
+      );
+     }
+    }
+   }
+
+   let cedula = prompt("Ingrese cédula");
+   let inicial = prompt("Ingrese su dinero imaginario");
+   let cliente = new CuentaBancaria(cedula, Number(inicial));
+
+   let operacion = prompt(`Ingrese operación:
+   
+   1 - ver saldo.
+   2 - depositar.
+   3 - retirar.`);
+
+   switch (operacion) {
+    case "1":
+     cliente.verSaldo();
+     break;
+    case "2":
+     let montoDeposito = prompt("Monto a depositar");
+     cliente.depositar(Number(montoDeposito));
+     break;
+    case "3":
+     let montoRetiro = prompt("Monto a retirar");
+     cliente.retirar(Number(montoRetiro));
+     break;
+    default:
+     console.log("Problemas con la ley llame a Saul Goodman!");
+   }
+  </script>
+ </body>
+</html>
